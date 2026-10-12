@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 
+
 /**
  * Week 1 starter controller.
  * Already provided:
@@ -15,8 +16,19 @@ import java.time.LocalDate;
  *   "Goodbye from Spring Boot!"
  */
 
+
+
+
+
 @RestController
 public class HelloController {
+
+
+    @GetMapping("/goodbye")
+    public String goodbye() {
+        return "Goodbye from Spring Boot!";
+    }
+
 
     @GetMapping("/hello")
     public String hello(){
