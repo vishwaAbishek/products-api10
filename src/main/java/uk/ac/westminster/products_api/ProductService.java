@@ -8,7 +8,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    private List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
 
     public List<Product> getAllProducts() {
@@ -33,6 +33,15 @@ public class ProductService {
     public void deleteProduct(Long id) {
         products.removeIf(p -> p.getId().equals(id));
     }
+
+
+
+    public List<Product> findByName(String name) {
+        return products.stream()
+                .filter(p -> p.getName().contains(name))
+                .toList();
+    }
+
 
 
 }
